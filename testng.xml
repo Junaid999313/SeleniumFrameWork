@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRM Automation Suite" verbose="1" parallel="false">
 
+    <listeners>
+        <listener class-name="com.qaframework.utils.AnnotationTransformer"/>
+    </listeners>
+
     <test name="Login Module Tests">
         <classes>
             <class name="com.qaframework.tests.LoginTest"/>
