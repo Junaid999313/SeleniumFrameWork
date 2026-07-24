@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Test suite for the Dashboard module.
@@ -36,7 +37,7 @@ public class DashboardTest extends BaseTest {
     @Test(priority = 2, description = "Verify sidebar navigation menu contains expected core modules")
     public void testSidebarMenuItemsPresent() {
         List<WebElement> menuItems = dashboardPage.getSidebarMenuItems();
-        List<String> menuTexts = menuItems.stream().map(WebElement::getText).toList();
+        List<String> menuTexts = menuItems.stream().map(WebElement::getText).collect(Collectors.toList());
 
         Assert.assertTrue(menuTexts.contains("Admin"), "Sidebar should contain 'Admin' menu item");
         Assert.assertTrue(menuTexts.contains("PIM"), "Sidebar should contain 'PIM' menu item");
