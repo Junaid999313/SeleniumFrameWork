@@ -108,3 +108,8 @@ mvn test -Dsurefire.suiteXmlFiles=testng-full.xml
   auto-waiting behavior against Selenium.
 - Exploring **AI-assisted test design** — using LLMs to brainstorm edge cases
   and generate test data during planning.
+
+## ⚡ Performance & API Testing
+ 
+- **JMeter** (`performance-tests/ReqRes_CRUD_LoadTest.jmx`) — Full CRUD load test (GET/POST/PUT/DELETE) against the ReqRes public API.
+- **REST Assured** (`UsersApiTest.java`) — Functional API tests against an authenticated ReqRes endpoint, including negative testing (401 without API key).
