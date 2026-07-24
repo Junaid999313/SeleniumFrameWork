@@ -49,6 +49,14 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
 
+        <!-- REST Assured: API test automation -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- ExtentReports: rich HTML test reports -->
         <dependency>
             <groupId>com.aventstack</groupId>

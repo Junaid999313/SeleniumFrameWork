@@ -34,6 +34,8 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Run Selenium TestNG suite
+        env:
+          REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
         run: mvn clean test
 
       - name: Upload Surefire test report
