@@ -24,11 +24,16 @@ public class PIMPage {
 
     public PIMPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     public void navigateToPIM() {
         wait.until(ExpectedConditions.elementToBeClickable(pimMenuLink)).click();
+        // Wait for the SPA route to actually change to the Employee List page
+        // before any subsequent step tries to interact with it — this is the
+        // step that was timing out under GitHub Actions network latency.
+        wait.until(ExpectedConditions.urlContains("viewEmployeeList"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(employeeNameInput));
     }
 
     public void searchByEmployeeName(String name) {
